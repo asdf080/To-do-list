@@ -1,0 +1,47 @@
+* {font-family: 'Pretendard-Regular';margin: 0;}
+
+#toDo-Form{
+  width: 100%;height: 250px;text-align: center;
+  position: relative;box-sizing: border-box;padding-top: 70px;
+  background: linear-gradient(135deg, #02aab0, #00cdac);}
+
+#toDo-Form label {
+  line-height: 20px;font-size: 60px;display: inline-block;margin-bottom: 50px;
+  color:white;font-weight: bold;
+}
+
+#toDo-Form input[type=text] {
+width: 600px;height: 30px;padding: 15px;padding-left: 25px;
+border-radius: 30px;font-size: 25px;
+border: 3px solid rgb(225, 243, 124)
+}
+
+#toDo-Form input[type=text]:focus{outline: none;}
+
+#toDo-Form button[type=submit]{
+  background-color: white;border: none;border-radius: 50%;margin-left: 20px;
+  height: 55px;width: 55px;}
+
+#toDo-Form button[type=submit] .fa-pen-nib{font-size: 30px;}
+
+#todo-list{
+  margin: 10px;margin-top: 20px; font-size: 23px;
+  line-height: 35px;}
+
+#todo-list li{
+  width: 500px;height: 50px;border-bottom: 1px solid #333;line-height: 60px;
+  padding-left: 10px;list-style:none;position: relative;
+}
+
+#todo-list button{
+  border: none;background: none;font-size: 20px;position: absolute;
+  text-align: right;top:16px;right: 0;}
+
+button:hover {cursor: pointer;}
+
+@font-face {
+font-family: 'Pretendard-Regular';
+src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+font-weight: 400;
+font-style: normal;
+}

@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>투두리스트</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Do List</title>
+  <link rel="stylesheet" href="toDoList.css">
+  <script src="https://kit.fontawesome.com/2cb2c6d57e.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div>
-        <h1>스마트웹앱 4기</h1>
-        <p>콘솔창 확인해서 JS문법을 봅시다</p>
-    </div>
-    <script src="./index.js"></script>
+  <form id="toDo-Form">
+    <label>TO DO LIST</label><BR>
+    <input type="text" placeholder="할 일을 입력해주세요.">
+    <button type="submit"><i class="fa-solid fa-pen-nib" style="color: #00cdac;"></i></button>
+  </form>
+  <ul id="todo-list"></ul>
+  <script src="toDoList.js"></script>
 </body>
 </html>
