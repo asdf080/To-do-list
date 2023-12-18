@@ -1,49 +1,69 @@
 * {font-family: 'Pretendard-Regular';margin: 0;}
-
 body{
   background: linear-gradient(135deg, #3870cc, #bc93d5);background-repeat: no-repeat;
   min-height: 100vh;background-attachment: fixed;}
 
-#toDo-Form{
-  width: 100%;height: 250px;text-align: center;
-  position: relative;box-sizing: border-box;padding-top: 70px;
-  }
+#Wrap{display: flex;width: 70%;margin: 20px auto 0 auto;justify-content: space-around;}
+#aside_Wrap{
+  padding: 20px 5px 0 5px;margin-top: 30px;border-radius: 20px;height: 800px;
+  background-color: rgba(255,255,255,0.5);
+}
+#img_Wrap{width: 250px;height: 200px; position: relative;display: inline-block;}
+#img_Wrap #randImg{position: relative;width: 100%;left: 25px;margin-top: 40px;}
+#img_Wrap #randImg img{width: 200px;height: 200px;object-fit: cover;border-radius: 50%;}
 
-#toDo-Form label {
+#quotes{
+  font-size: 21px;text-align: center;margin: 50px 10px 20px 10px;
+}
+
+#clock_Wrap{display: flex;align-items: center;justify-content: center;margin-top: 50px;}
+#clock {font-size: 23px;}
+
+#weather_Wrap{display: flex;align-items: center;justify-content: center;margin-top: 50px;}
+#weather {font-size: 23px;}
+
+#from_Wrap{width: 80%;}
+#toDo-Form{
+  width: 90%;height: 250px;text-align: center;
+  position: relative;box-sizing: border-box;padding-top: 50px;
+  }
+#list-Wrap{width: 90%;}
+
+#from_Wrap #toDo-Form label {
   line-height: 20px;font-size: 60px;display: inline-block;margin-bottom: 50px;
   color:white;font-weight: bold;
 }
-
-#toDo-Form input[type=text] {
-width: 600px;height: 30px;padding: 15px;padding-left: 25px;
+#from_Wrap #toDo-Form input[type=text] {
+width: 65%;height: 30px;padding: 15px;padding-left: 25px;
 border-radius: 30px;font-size: 25px;
 border: 5px solid #3870cc;
 }
 
-#toDo-Form input[type=text]:focus{outline: none;}
+#from_Wrap #toDo-Form input[type=text]:focus{outline: none;}
 
-#toDo-Form button[type=submit]{
+#from_Wrap #toDo-Form button[type=submit]{
   background-color: white;border: none;border-radius: 50%;margin-left: 20px;
   height: 55px;width: 55px;}
 
-#toDo-Form button[type=submit] .fa-pen-nib{font-size: 30px;}
+#from_Wrap #toDo-Form button[type=submit] .fa-pen-nib{font-size: 30px;}
 
-#todo-list{ /* ul 태그*/
-  font-size: 23px;line-height: 35px;padding: 40px 0;width: 50%;min-height: 500px;
-  margin: 20px auto;background-color: rgba(255, 255, 255, 0.5);
+#list-Wrap #todo-list{ /* ul 태그*/
+  font-size: 23px;line-height: 35px;padding: 40px 0;width: 80%;min-height: 500px;
+  margin: 20px auto;background-color: rgba(255, 255, 255, 0.5);border-radius: 20px;
 }
 
-#todo-list li{
-  width: 48%;min-height: 30px;line-height: 25px;margin: 20px auto;border-radius: 10px;
+#list-Wrap #todo-list li{
+  width: 65%;min-height: 30px;line-height: 25px;margin: 20px auto;border-radius: 10px;
   padding: 13px 50px 10px 20px;list-style:none;position: relative;background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-#todo-list button{
+#list-Wrap #todo-list button{
   border: none;background: none;font-size: 20px;position: absolute;
   text-align: right;top:15%;right: 0;padding-right: 20px;}
+#todo-list button:hover {cursor: pointer;}
 
-button:hover {cursor: pointer;}
+
 
 @font-face {
 font-family: 'Pretendard-Regular';
@@ -55,30 +75,22 @@ font-style: normal;
 /* 미디어 쿼리 */
 
 @media screen and (max-width: 1100px) {
+  #Wrap {flex-direction: column;width: 100%;}
+  #aside_Wrap{
+    order:1;width: 50%;height: 650px; margin: 0 auto;
+    padding-left: 50px;position: relative;}
+  #clock_Wrap{margin-top: 0;}
+  #weather_Wrap{margin-top: 0;}
+
+  #toDo-Form{width: 100%;}
   #toDo-Form input[type=text] {
-      width: 70%;height: 25px;margin-left: 5px;
-  }
-  #todo-list{width: 70%; margin: auto;}
-  #todo-list li {
-    width: 70%;margin: 20px auto;
+   height: 25px;margin-left: 35px;
   }
 
-  #toDo-Form button[type=submit]{
-    margin-left: 5px; height: 43px;width: 43px;
-  }
-
-  #toDo-Form button[type=submit] .fa-pen-nib{font-size: 26px;}
-}
-
-@media screen and (max-width: 750px) {
-  #toDo-Form input[type=text] {
-      width: 70%;height: 25px;margin-left: 5px;
-  }
-  #todo-list{width: 70%; margin: auto;}
-  #todo-list li {
-    width: 70%;margin: 20px auto;
-  }
-
+  #list-Wrap {width: 100%;}
+  #list-Wrap #todo-list {width: 100%; margin: 10px 20px;}
+  #list-Wrap #todo-list li {width: 70%;margin: 20px auto;}
+  /* #from_Wrap{margin-left: 50px;} */
   #toDo-Form button[type=submit]{
     margin-left: 5px; height: 43px;width: 43px;
   }
