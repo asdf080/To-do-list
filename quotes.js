@@ -18,8 +18,11 @@ function onSu(position){
   .then(res => res.json())
   .then(data => {
     console.log(data);
-    weather.innerText = data.weather[0].main + " " + data.main.temp + " ºC"
+    if(data.weather[0].main == 'Clear'){
+    weather.innerHTML = '<i class="fa-regular fa-sun"></i> ' + data.main.temp + " ºC"
+    }
+    else weather.innerText = data.weather[0].main + " " + data.main.temp + " ºC"
   })
 }
 
-navigator.geolocation.getCurrentPosition(onSu, () => weather.innerText ="오류");
+navigator.geolocation.getCurrentPosition(onSu, () => weather.innerText ="위치 권한을 허용해주세요.");
