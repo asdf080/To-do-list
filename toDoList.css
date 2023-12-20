@@ -1,6 +1,6 @@
 * {font-family: 'Pretendard-Regular';margin: 0;}
 body{
-  background: linear-gradient(135deg, #3870cc, #bc93d5);background-repeat: no-repeat;
+  background: linear-gradient(135deg, #3f75ca, #dfabff);background-repeat: no-repeat;
   min-height: 100vh;background-attachment: fixed;}
 
 #Wrap{display: flex;width: 70%;margin: 20px auto 0 auto;justify-content: space-around;}
@@ -36,7 +36,7 @@ body{
 #from_Wrap #toDo-Form input[type=text] {
 width: 65%;height: 30px;padding: 15px;padding-left: 25px;
 border-radius: 30px;font-size: 25px;
-border: 5px solid #3870cc;
+border: 5px solid #4688f1;
 }
 
 #from_Wrap #toDo-Form input[type=text]:focus{outline: none;}
@@ -63,7 +63,7 @@ border: 5px solid #3870cc;
   text-align: right;top:15%;right: 0;padding-right: 20px;}
 #todo-list button:hover {cursor: pointer;}
 
-
+.dragging{opacity: 0.2;}
 
 @font-face {
 font-family: 'Pretendard-Regular';
@@ -77,10 +77,11 @@ font-style: normal;
 @media screen and (max-width: 1100px) {
   #Wrap {flex-direction: column;width: 100%;}
   #aside_Wrap{
-    order:1;width: 50%;height: 500px; margin: 0 auto;
-    padding-left: 50px;position: relative;}
-  #clock_Wrap{margin-top: 0;}
-  #weather_Wrap{margin-top: 0;}
+    order:1;width: 50%;height: 480px; margin: 0 auto;
+    padding-left: 50px;position: relative;display: flex;}
+  #flex_2{margin-left: 50px;}
+  #clock_Wrap{margin-top: 150px;}
+  #weather_Wrap{margin-top: 50px;}
   
   #from_Wrap {margin: 0 auto;}
   #toDo-Form{width: 100%;}
@@ -96,4 +97,8 @@ font-style: normal;
   }
 
   #toDo-Form button[type=submit] .fa-pen-nib{font-size: 26px;}
+}
+
+@media screen and (max-width: 920px){
+  #aside_Wrap{width: 70%;}
 }

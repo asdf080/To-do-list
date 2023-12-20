@@ -17,10 +17,12 @@ function onSu(position){
   fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API}&units=metric`)
   .then(res => res.json())
   .then(data => {
-    console.log(data);
     if(data.weather[0].main == 'Clear'){
     weather.innerHTML = '<i class="fa-regular fa-sun"></i> ' + data.main.temp + " ºC"
     }
+    if(data.weather[0].main == 'Clouds'){
+      weather.innerHTML = '<i class="fa-solid fa-cloud-sun"></i> ' + data.main.temp + " ºC"
+      }
     else weather.innerText = data.weather[0].main + " " + data.main.temp + " ºC"
   })
 }

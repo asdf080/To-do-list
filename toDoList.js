@@ -18,12 +18,13 @@ function deleteToDo(e){
 function paintToDo(newTodoObj){
   const li = document.createElement("li")
   li.setAttribute("id", newTodoObj.id)
+  li.setAttribute("draggable", "true")
   const span = document.createElement("span")
   const btn = document.createElement("button")
 
   btn.innerText = "✖"
   btn.addEventListener("click", deleteToDo)
-  li.innerText = newTodoObj.text;
+  span.innerText = newTodoObj.text;
   li.appendChild(span)
   li.appendChild(btn)
   toDoLi.appendChild(li)
@@ -31,7 +32,6 @@ function paintToDo(newTodoObj){
 
 function handleToDoSubmit(event){
   event.preventDefault();
-  // const newToDo = toDoInput.value
   const newTodoObj = {
     text: toDoInput.value,
     id: Date.now()
@@ -46,12 +46,58 @@ function handleToDoSubmit(event){
 toDo.addEventListener("submit", handleToDoSubmit)
 
 const saved = localStorage.getItem("todos")
-console.log(saved)
 
 if(saved){
   toDos=JSON.parse(saved)
   toDos.forEach(paintToDo);
 }
+
+// 드래그
+const ul = document.querySelector("ul")
+const list = document.querySelectorAll("li:not(.dragging)")
+
+list.forEach(li => {
+  li.addEventListener("dragstart", () => {
+    li.classList.add("dragging")
+  })
+  li.addEventListener("dragend", () =>{
+    li.classList.remove("dragging")
+  })
+})
+
+const initSortableList = e => {
+  e.preventDefault();
+  const dragItem = ul.querySelector(".dragging");
+  const siblings = [...ul.querySelectorAll("li:not(.dragging)")]
+
+  let nextSibling = siblings.find(sibling => {
+    return e.clientY <= sibling.offsetTop + sibling.offsetHeight / 2;
+  })
+  ul.insertBefore(dragItem, nextSibling)
+}
+
+ul.addEventListener("dragover", initSortableList)
+ul.addEventListener("dragenter", e => e.preventDefault())
+
+function saveToDos (){
+  localStorage.setItem("todos", JSON.stringify(toDos))
+}
+
+function reSave(newLi){
+  toDos = []
+  newLi.forEach(item => {
+    const text = item.querySelector("span")
+    const newTodoObj = {
+      text: text.innerText,
+      id: item.id
+    }
+  toDos.push(newTodoObj)
+})}
+
+ul.addEventListener("drop", () => {
+  const newLi = document.querySelectorAll("li")
+  reSave(newLi)
+})
 
 // 이미지
 const randImg = document.querySelector("#randImg")
