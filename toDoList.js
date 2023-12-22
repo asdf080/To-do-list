@@ -11,7 +11,9 @@ function saveToDos() {
 function deleteToDo(e) {
   const li = e.target.parentElement;
   li.remove();
-  toDos = toDos.filter((item) => item.id !== parseInt(li.id));
+  toDos = toDos.filter(
+    (item) => item.text !== li.querySelector("span").innerText
+  );
   saveToDos();
 }
 
