@@ -18,3 +18,6 @@
 - new Date()로 현재 시간 표기
 - Weather API를 이용한 현재 장소의 날씨 표기
 - 명언 API를 이용한 랜덤 명언 표기
+
+### ✔ 미리보기
+![preview](./images/preview.png)
