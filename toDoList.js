@@ -129,3 +129,29 @@ function getClock() {
 }
 getClock();
 setInterval(getClock, 1000);
+
+console.log(`
+      ROCKET SCIENCE
+
+            ##
+           #  #
+          #    #
+         #      #
+        #   ##   #
+       #  #    #  #
+       #  #    #   #
+     ##     ##     ##
+    # #            # #
+   #  #            #  #
+  #   #            #   #
+ #    #            #    #
+ #  # #            # #  #
+ # #   #          #   # #
+ #      # # # # ##      #
+
+         #      #
+          #    #
+           #  #
+            ##
+
+`)
